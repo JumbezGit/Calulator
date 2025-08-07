@@ -13,29 +13,39 @@
 <body>
     <div class="text-center my-4">
         <h1 class="text-danger">Calculator</h1>
-        <form id="calculator" class="form-inline">
-            <div class="mb-3">
-                <!-- <input type="text" id="input1" class="form-control" placeholder="Enter first number" required>
-                <input type="text" id="input2" class="form-control" placeholder="Enter second number" required> -->
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn btn-lg btn-secondary rounded-0 mb-3" onclick="add()"><i class="fa fa-plus"></i>+</button>
-                    <button type="button" class="btn btn-lg btn-secondary rounded-0 mb-3"
-                        onclick="subtract()">-</button>
-                    <button type="button" class="btn btn-lg btn-secondary rounded-0 mb-3"
-                        onclick="multiply()">x</button>
-                    <button type="button" class="btn btn-lg btn-secondary rounded-0 mb-3" onclick="divide()">/</button>
-                </div>
-                <button type="button" class="btn w-50 btn-sm btn-primary" onclick="calculate()">Calculate</button>
-
-            </div>
-            https://docs.google.com/spreadsheets/d/1DQcKBEJXZm-S92-qSDmw8M8Lo2Gvei3JIEGIe9wCO2Y/edit?usp=sharing
-        </form>
-        <div class="mt-3">
-            <h2 id="result" class="text-success"></h2>
-        </div>
-    </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form id="calculator" class="bg-light p-4 rounded">
+                        <div class="mb-3">
+                            <input type="text" id="display" class="form-control" disabled>
+                        </div>
+                        <div class="btn-group d-flex flex-wrap mb-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('7')">7</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('8')">8</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('9')">9</button>
+                            <button type="button" class="btn btn-danger col-3" onclick="clearDisplay()">C</button>
+                        </div>
+                        <div class="btn-group d-flex flex-wrap mb-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('4')">4</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('5')">5</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('6')">6</button>
+                            <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('+')">+</button>
+                        </div>
+                        <div class="btn-group d-flex flex-wrap mb-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('1')">1</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('2')">2</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('3')">3</button>
+                            <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('-')">-</button>
+                        </div>
+                        <div class="btn-group d-flex flex-wrap mb-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('0')">0</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('.')">.</button>
+                            <button type="button" class="btn btn-success col-3" onclick="calculate()">=</button>
+                            <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('/')">/</button>   
+                        </div>
+                    </form>
+<div>
 </body>
 
 </html>
