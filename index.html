@@ -12,13 +12,13 @@
 
 <body>
     <div class="text-center my-4">
-        <h1 class="text-danger">Calculator</h1>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form id="calculator" class="bg-light p-4 rounded">
+                <div class="col-md-6 rounded-4 my-5">
+                    <form id="calculator" class="bg-light p-4 border rounded-4  p-3 mb-5 bg-white ">
+                        <h4 class="text-center mb-4 text-end">CASIO CALCULATOR</h4>
                         <div class="mb-3">
-                            <input type="text" id="display" class="form-control" disabled>
+                            <input type="text" id="display" class="form-control form-control-lg w-100" disabled>
                         </div>
                         <div class="btn-group d-flex flex-wrap mb-3">
                             <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('7')">7</button>
@@ -44,8 +44,36 @@
                             <button type="button" class="btn btn-success col-3" onclick="calculate()">=</button>
                             <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('/')">/</button>   
                         </div>
+                        <div class="btn-group d-flex flex-wrap mb-3">
+                            <button type="button" class="btn btn-primary col-6" onclick="appendToDisplay('*')">*</button>
+                            <button type="button" class="btn btn-secondary col-6" onclick="appendToDisplay('%')">%</button>
+                        </div>
                     </form>
+                </div>
+            </div>
 <div>
-</body>
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        const display = document.getElementById('display');
+        try {
+            display.value = eval(display.value);
+        } catch (error) {
+            display.value = 'Error';
+        }
+    }   
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-1CmrxMRARb6aLqgBO7f4pP5d3p66d5e5b5d5e5b5d5e5b5d5e5b5d5d5e5b5d5e5b5d5e5b5d"
+    crossorigin="anonymous"></script>
+</body> 
 
 </html>
