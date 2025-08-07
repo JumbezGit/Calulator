@@ -1,0 +1,64 @@
+  body {
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .calculator-container {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .btn {
+            font-size: 1.5rem;
+            padding: 8px;
+            transition: transform 0.1s, background-color 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .btn-number {
+            background-color: #6c757d;
+            color: white;
+        }
+        .btn-operator {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-clear {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-equals {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-group {
+            margin-bottom: 15px;
+        }
+        #display {
+            font-size: 2rem;
+            text-align: right;
+            height: 70px;
+            border: none;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            padding: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .rounded-4 {
+            border-radius: 1.5rem;
+        }
+        .calculator-title {
+            font-size: 1.2rem;
+            color: #343a40;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }

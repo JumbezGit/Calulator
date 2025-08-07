@@ -1,79 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Calculator</title>
+    <title>Casio Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
-
 <body>
-    <div class="text-center my-4">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 rounded-4 my-5">
-                    <form id="calculator" class="bg-light p-4 border rounded-4  p-3 mb-5 bg-white ">
-                        <h4 class="text-center mb-4 text-end">CASIO CALCULATOR</h4>
-                        <div class="mb-3">
-                            <input type="text" id="display" class="form-control form-control-lg w-100" disabled>
-                        </div>
-                        <div class="btn-group d-flex flex-wrap mb-3">
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('7')">7</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('8')">8</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('9')">9</button>
-                            <button type="button" class="btn btn-danger col-3" onclick="clearDisplay()">C</button>
-                        </div>
-                        <div class="btn-group d-flex flex-wrap mb-3">
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('4')">4</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('5')">5</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('6')">6</button>
-                            <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('+')">+</button>
-                        </div>
-                        <div class="btn-group d-flex flex-wrap mb-3">
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('1')">1</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('2')">2</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('3')">3</button>
-                            <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('-')">-</button>
-                        </div>
-                        <div class="btn-group d-flex flex-wrap mb-3">
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('0')">0</button>
-                            <button type="button" class="btn btn-secondary col-3" onclick="appendToDisplay('.')">.</button>
-                            <button type="button" class="btn btn-success col-3" onclick="calculate()">=</button>
-                            <button type="button" class="btn btn-primary col-3" onclick="appendToDisplay('/')">/</button>   
-                        </div>
-                        <div class="btn-group d-flex flex-wrap mb-3">
-                            <button type="button" class="btn btn-primary col-6" onclick="appendToDisplay('*')">*</button>
-                            <button type="button" class="btn btn-secondary col-6" onclick="appendToDisplay('%')">%</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="calculator-container">
+        <form id="calculator" class="p-3">
+            <h4 class="calculator-title">CASIO CALCULATOR</h4>
+            <div class="mb-4">
+                <input type="text" id="display" class="form-control form-control-lg w-100" value="0" disabled>
             </div>
-<div>
+            <div class="btn-group d-flex flex-wrap mb-3">
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('7')">7</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('8')">8</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('9')">9</button>
+                <button type="button" class="btn btn-clear col-3" onclick="clearDisplay()">
+                    <i class="bi bi-x-circle"></i>
+                </button>
+            </div>
+            <div class="btn-group d-flex flex-wrap mb-3">
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('4')">4</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('5')">5</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('6')">6</button>
+                <button type="button" class="btn btn-operator col-3" onclick="appendToDisplay('+')">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+            <div class="btn-group d-flex flex-wrap mb-3()">
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('1')">1</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('2')">2</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('3')">3</button>
+                <button type="button" class="btn btn-operator col-3" onclick="appendToDisplay('-')">
+                    <i class="bi bi-dash"></i>
+                </button>
+            </div>
+            <div class="btn-group d-flex flex-wrap mb-3">
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('0')">0</button>
+                <button type="button" class="btn btn-number col-3" onclick="appendToDisplay('.')">.</button>
+                <button type="button" class="btn btn-equals col-3" onclick="calculate()">=</button>
+                <button type="button" class="btn btn-operator col-3" onclick="appendToDisplay('/')">
+                    <i class="bi bi-slash"></i>
+                </button>
+            </div>
+            <div class="btn-group d-flex flex-wrap mb-3">
+                <button type="button" class="btn btn-operator col-6" onclick="appendToDisplay('*')">
+                    <i class="bi bi-asterisk"></i>
+                </button>
+                <button type="button" class="btn btn-operator col-6" onclick="appendToDisplay('%')">
+                    <i class="bi bi-percent"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Initialize display with 0
+        document.getElementById('display').value = '0';
 
-<script>
-    function appendToDisplay(value) {
-        document.getElementById('display').value += value;
-    }
+        // Appends a value to the display, handling decimal points and initial state
+        function appendToDisplay(value) {
+            const display = document.getElementById('display');
+            let currentValue = display.value;
 
-    function clearDisplay() {
-        document.getElementById('display').value = '';
-    }
+            // Remove initial '0' when starting a new number
+            if (currentValue === '0' && value !== '.') {
+                currentValue = '';
+            }
 
-    function calculate() {
-        const display = document.getElementById('display');
-        try {
-            display.value = eval(display.value);
-        } catch (error) {
-            display.value = 'Error';
+            // Prevent multiple decimal points in a single number
+            if (value === '.') {
+                const lastNumber = currentValue.split(/[+\-*/%]/).pop();
+                if (lastNumber.includes('.')) {
+                    return; // Don't add another decimal point
+                }
+            }
+
+            // Append the value and update display
+            display.value = currentValue + value;
         }
-    }   
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1CmrxMRARb6aLqgBO7f4pP5d3p66d5e5b5d5e5b5d5e5b5d5e5b5d5d5e5b5d5e5b5d5e5b5d"
-    crossorigin="anonymous"></script>
-</body> 
 
+        // Clears the display and resets to 0
+        function clearDisplay() {
+            document.getElementById('display').value = '0';
+        }
+
+        // Evaluates the expression and displays the result or an error
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                // Prevent evaluation of empty or invalid expressions
+                if (!display.value || display.value === '0') {
+                    return;
+                }
+                const result = eval(display.value);
+                // Ensure result is a number and not undefined
+                if (typeof result === 'number' && !isNaN(result)) {
+                    display.value = result;
+                } else {
+                    display.value = 'Error';
+                }
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
 </html>
